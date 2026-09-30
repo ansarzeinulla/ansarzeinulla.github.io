@@ -97,7 +97,7 @@
   <h1>Ansar Zeinulla</h1>
   <p class="role" data-i18n="role">AI / ML Engineer</p>
   <p class="sub" data-i18n="loc">Astana, Kazakhstan · Kazakh, Russian, English · First graduate of Tomorrow School (alem.ai)</p>
-  <p class="pitch" data-i18n="pitch">I make models smaller and faster, and I build the data infrastructure they run on. I write the low-level code most teams would rather not touch — quantised inference kernels, compressed data stores, training pipelines that fit the hardware you already have — and I measure the result instead of estimating it.</p>
+  <p class="pitch" data-i18n="pitch">I make models smaller and faster, and build the data infrastructure they run on. Every claim below has a number behind it and a public repository you can check.</p>
 
   <div class="open">
     <b data-i18n="openTitle">Open to work — ML engineering, inference optimisation, data infrastructure</b>
@@ -124,13 +124,13 @@
 <h2 data-i18n="hSkills">What I can do</h2>
 <dl class="skills">
   <dt data-i18n="sk1t">Train &amp; fine-tune</dt>
-  <dd data-i18n="sk1d">Continued pretraining and supervised fine-tuning with LoRA, on a single machine. Evaluation designed so the numbers survive scrutiny: leakage checks, held-out splits, metrics that compare across tokenizers.</dd>
+  <dd data-i18n="sk1d">LoRA continued pretraining and supervised fine-tuning on one machine. Leakage checks and held-out splits — a number I cannot defend is worth nothing.</dd>
   <dt data-i18n="sk2t">Make it fast</dt>
-  <dd data-i18n="sk2d">Quantised inference kernels in C++ with ARM matrix instructions and SIMD. Profiling, benchmarking, and honest before/after numbers.</dd>
+  <dd data-i18n="sk2d">Quantised inference kernels in C++ with ARM matrix instructions. Before and after measured on an idle machine, wins and losses both reported.</dd>
   <dt data-i18n="sk3t">Data at scale</dt>
-  <dd data-i18n="sk3d">Pipelines over 10<sup>11</sup>-row datasets, block compression, index design, and serving records over HTTP without a server.</dd>
+  <dd data-i18n="sk3d">Pipelines over 10<sup>11</sup>-row datasets, block compression, index design, records served over HTTP with no backend.</dd>
   <dt data-i18n="sk4t">Ship it</dt>
-  <dd data-i18n="sk4d">CI, tests, web demos in WebAssembly and Gradio, public model and dataset releases.</dd>
+  <dd data-i18n="sk4d">CI, tests, browser demos, public model and dataset releases.</dd>
 </dl>
 
 <h2 data-i18n="hProj">Built and shipped</h2>
@@ -147,12 +147,12 @@
 </div>
 
 <div class="proj">
-  <h3 data-i18n="p2t">126-billion-row dataset with O(1) lookup</h3>
+  <h3 data-i18n="p2t">First strong solution of Bestemshe</h3>
   <p class="stack">C++ · Python · ZSTD</p>
-  <p data-i18n="p2d">Computed an exact 125,698,242,527-record database, compressed it, and served it so a single record can be read over an HTTP range request — no download, no backend. 16 bytes per entry via combinatorial indexing.</p>
+  <p data-i18n="p2d">A five-pit Kazakh mancala, solved exactly for all 125,698,242,527 positions: the second player wins. No one had solved it before. For scale, the strong solution of Awari (2002) took 778 GiB on a 72-node cluster; this one is 8.96 GB and answers any position over a single HTTP range request, with no backend at all.</p>
   <div class="metric">
-    <div><b>8.96 GB</b><span data-i18n="p2m1">for 126 billion records</span></div>
-    <div><b>O(1)</b><span data-i18n="p2m2">lookup, straight from static storage</span></div>
+    <div><b>126 · 10<sup>9</sup></b><span data-i18n="p2m1">positions solved exactly</span></div>
+    <div><b>8.96 GB</b><span data-i18n="p2m2">O(1) lookup, static storage</span></div>
   </div>
   <p class="links"><a href="https://github.com/ansarzeinulla/Bestemshe">GitHub</a> · <a href="https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase">Dataset</a> · <a href="https://huggingface.co/spaces/ansarzeinulla/Bestemshe-God-Algorithm">Live demo</a></p>
 </div>
@@ -160,7 +160,7 @@
 <div class="proj">
   <h3 data-i18n="p3t">LLM for a low-resource language, trained on a laptop</h3>
   <p class="stack">MLX · LoRA · Hugging Face</p>
-  <p data-i18n="p3d">Built a 2.35M-word corpus for Nogai with a reproducible pipeline and adapted Qwen2.5-1.5B to it on Apple Silicon — no cluster. I found train/validation leakage in my own data, rebuilt the splits and withdrew a journal submission rather than publish numbers I could not defend.</p>
+  <p data-i18n="p3d">A 2.35M-word corpus for Nogai — 86,000 speakers, in no major model — built by a reproducible pipeline, then Qwen2.5-1.5B adapted to it on Apple Silicon. No cluster. I found train/validation leakage in my own data, rebuilt the splits, and withdrew a journal submission rather than publish numbers I could not defend.</p>
   <div class="metric">
     <div><b>130 → 13.4</b><span data-i18n="p3m1">held-out perplexity</span></div>
     <div><b>2.04 → 1.09</b><span data-i18n="p3m2">bits per byte</span></div>
@@ -171,7 +171,7 @@
 <div class="proj">
   <h3 data-i18n="p4t">C++ search engine with a WebAssembly build</h3>
   <p class="stack">C++ · WASM · CI</p>
-  <p data-i18n="p4d">Search with transposition tables running at 2.42M nodes/s in the browser, full CI and a deployed demo. The accompanying complexity analysis is under review at the <em>ICGA Journal</em>.</p>
+  <p data-i18n="p4d">Search with transposition tables at 2.42M nodes/s in the browser, full CI, deployed demo. A reviewer found a real bug in my transposition table; I measured its effect, fixed it, and added a regression test that fails against the old behaviour.</p>
   <p class="links"><a href="https://github.com/ansarzeinulla/9Q">GitHub</a> · <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
 </div>
 
@@ -198,7 +198,7 @@
 </div>
 
 <footer>
-  <span data-i18n="foot">If you have a model that is too slow or too big to fit — that is the problem I like.</span>
+  <span data-i18n="foot">A model that is too slow or too big to fit is the problem I like.</span>
   <a href="mailto:ansar.zeinulla@nu.edu.kz">ansar.zeinulla@nu.edu.kz</a>
 </footer>
 
@@ -210,7 +210,7 @@
     kk:{
       role:"AI / ML инженері",
       loc:"Астана, Қазақстан · қазақша, орысша, ағылшынша · Tomorrow School (alem.ai) бірінші түлегі",
-      pitch:"Мен модельдерді кішірейтіп, жылдамдатамын және олар жұмыс істейтін дерек инфрақұрылымын құрамын. Көп команда қолға алғысы келмейтін төменгі деңгейдегі кодты жазамын — кванттанған инференс ядролары, сығылған дерек қоймалары, бар жабдыққа сыятын оқыту құбырлары — және нәтижені болжамай, өлшеймін.",
+      pitch:"Мен модельдерді кішірейтіп, жылдамдатамын және олар жұмыс істейтін дерек инфрақұрылымын құрамын. Төмендегі әрбір тұжырымның артында нақты сан және тексеруге ашық репозиторий бар.",
       openTitle:"Жұмысқа ашықпын — ML инженериясы, инференсті оңтайландыру, дерек инфрақұрылымы",
       openBody:"Қазір тәжірибеден өту, жарты күн немесе келісімшарт · 2028 жылғы маусымнан толық күн · Астанада немесе қашықтан",
       ctaMail:"Хат жазу", ctaCard:"Байланысты сақтау",
@@ -218,33 +218,33 @@
       pub1:"<strong>Solving Bestemshe and Mapping Togyzkumalak</strong> — CMAI 2026 конференциясында ұсынылған тезис. CMAI 2026 — Назарбаев Университетіндегі ISSAI өткізген Математика және ЖИ бойынша 1-ші халықаралық конференция. Тезистер жинағы, ISBN 978-601-08-6470-2, 43–44 беттер.",
       pub2:"Тоғызқұмалақтың күй кеңістігінің күрделілігі туралы мақала — <strong><em>ICGA Journal</em> журналында қаралуда</strong> (екінші раунд).",
       sk1t:"Оқыту және баптау",
-      sk1d:"LoRA арқылы жалғасты алдын ала оқыту және бақыланатын баптау — бір машинада. Бағалау сынға төтеп беретіндей жасалады: дерек ағуын тексеру, бөлек сынақ жиыны, токенизаторлар арасында салыстыруға келетін метрикалар.",
+      sk1d:"LoRA арқылы жалғасты алдын ала оқыту және бақыланатын баптау — бір машинада. Дерек ағуын тексеру және бөлек сынақ жиыны: қорғай алмайтын санның құны жоқ.",
       sk2t:"Жылдамдату",
-      sk2d:"C++ тілінде ARM матрицалық нұсқаулары мен SIMD көмегімен кванттанған инференс ядролары. Профильдеу, бенчмарк және адал «бұрын/кейін» сандары.",
+      sk2d:"C++ тілінде ARM матрицалық нұсқауларымен кванттанған инференс ядролары. «Бұрын/кейін» бос машинада өлшенеді, ұтыс та, ұтылыс та жарияланады.",
       sk3t:"Үлкен деректер",
       sk3d:"10<sup>11</sup> жазбалы жиындар бойынша құбырлар, блоктық сығу, индекс жобалау және серверсіз HTTP арқылы жазба беру.",
       sk4t:"Өнімге шығару",
-      sk4d:"CI, тестілер, WebAssembly және Gradio демолары, ашық модель мен дерек жинақтарын жариялау.",
+      sk4d:"CI, тестілер, браузердегі демо, ашық модель мен дерек жинақтары.",
       p1t:"llama.cpp үшін жылдамырақ тернарлы LLM инференсі",
       p1d:"<code>TQ2_0</code> тернарлы форматы үшін 8×8 блоктық матрицалық көбейту ядросы, скаляр жолды алмастырады. 90 мыңнан астам жұлдызы бар жобаға ашық pull request.",
       p1m1:"M2 Pro-да промпт өңдеу жылдамдығы", p1m2:"токен/с, болжам емес, өлшенген",
-      p2t:"126 миллиард жазбалы дерекқор, O(1) іздеумен",
-      p2d:"125 698 242 527 жазбадан тұратын дәл дерекқор есептелді, сығылды және жеке жазбаны HTTP range сұрауымен оқуға болатындай етіп берілді — жүктеп алусыз, бэкендсіз. Комбинаторлық индекс арқылы жазбасына 16 байт.",
-      p2m1:"126 миллиард жазба үшін", p2m2:"іздеу, статикалық қоймадан тікелей",
+      p2t:"Бестемшенің әлемдегі алғашқы толық шешімі",
+      p2d:"Бес шұңқырлы қазақ манкаласы 125 698 242 527 позицияның бәрі үшін дәл шешілді: екінші ойыншы жеңеді. Бұған дейін оны ешкім шешпеген. Салыстыру үшін: Awari ойынының толық шешімі (2002) 72 түйінді кластерде 778 ГиБ орын алған; мұнда 8,96 ГБ және кез келген позицияға бір HTTP range сұрауымен жауап беріледі, бэкендсіз.",
+      p2m1:"позиция дәл шешілді", p2m2:"O(1) іздеу, статикалық қойма",
       p3t:"Ресурсы аз тіл үшін LLM, ноутбукте оқытылған",
-      p3d:"Ноғай тілі үшін 2,35 млн сөзден тұратын корпус қайталанатын құбырмен жиналды және Qwen2.5-1.5B Apple Silicon-да бейімделді — кластерсіз. Өз деректерімнен оқыту мен тексеру жиындарының араласқанын тауып, бөлуді қайта жасадым және қорғай алмайтын сандарды жарияламай, журналдағы мақаланы кері қайтарып алдым.",
+      p3d:"Ноғай тілі — 86 000 сөйлеуші, ірі модельдердің ешқайсысында жоқ — үшін 2,35 млн сөздік корпус қайталанатын құбырмен жиналды, сосын Qwen2.5-1.5B Apple Silicon-да бейімделді. Кластерсіз. Өз деректерімнен оқыту мен тексеру жиындарының араласқанын тауып, бөлуді қайта жасадым және қорғай алмайтын сандарды жарияламай, журналдағы мақаланы кері қайтарып алдым.",
       p3m1:"бөлек сынақтағы перплексия", p3m2:"байтқа шаққандағы бит",
       p4t:"WebAssembly құрастырмасы бар C++ іздеу қозғалтқышы",
-      p4d:"Транспозиция кестелері бар іздеу браузерде 2,42 млн түйін/с жылдамдықпен жұмыс істейді, толық CI және жарияланған демо. Қатар жүрген күрделілік талдауы <em>ICGA Journal</em> журналында қаралуда.",
+      p4d:"Транспозиция кестелерімен іздеу браузерде 2,42 млн түйін/с, толық CI, жарияланған демо. Рецензент транспозиция кестесінен нақты қате тапты; мен оның әсерін өлшеп, түзетіп, ескі мінез-құлықта құлайтын регрессиялық тест қостым.",
       p5t:"Apple AMX копроцессоры — Python-нан",
       p5d:"<code>amxpy</code> Apple-дің құжатталмаған матрицалық копроцессорын Python-ға ашады; әртүрлі өлшемдерде өлшеніп, ұтқан (2,91×) жағдайлары сияқты ұтылған (0,70×) жағдайлары да жарияланған.",
       edu:"<strong>Компьютерлік ғылымдар бакалавры, Назарбаев Университеті</strong> — 3-курс, 2028 жылдың маусымында бітіреді.<br>GPA 3,87 / 4,00, <strong>курста 221 студенттің ішінде 1-орын</strong>. Толық мемлекеттік грант. Бұрынғы зерттеу ассистенті.<br><strong>Tomorrow School (alem.ai) бірінші түлегі</strong>.",
-      foot:"Егер моделіңіз тым баяу немесе тым үлкен болса — маған ұнайтын мәселе дәл сол."
+      foot:"Тым баяу немесе тым үлкен модель — маған ұнайтын мәселе дәл сол."
     },
     ru:{
       role:"AI / ML инженер",
       loc:"Астана, Казахстан · казахский, русский, английский · первый выпускник Tomorrow School (alem.ai)",
-      pitch:"Я делаю модели меньше и быстрее и строю инфраструктуру данных, на которой они работают. Пишу низкоуровневый код, за который большинство команд браться не хочет — ядра квантованного инференса, сжатые хранилища, пайплайны обучения под то железо, которое уже есть, — и результат измеряю, а не оцениваю на глаз.",
+      pitch:"Я делаю модели меньше и быстрее и строю инфраструктуру данных, на которой они работают. За каждым утверждением ниже стоит число и открытый репозиторий, который можно проверить.",
       openTitle:"Открыт к работе — ML-инженерия, оптимизация инференса, инфраструктура данных",
       openBody:"Сейчас стажировка, частичная занятость или контракт · полная занятость с июня 2028 · Астана или удалённо",
       ctaMail:"Написать", ctaCard:"Сохранить контакт",
@@ -252,28 +252,28 @@
       pub1:"<strong>Solving Bestemshe and Mapping Togyzkumalak</strong> — тезис, представленный на CMAI 2026, 1-й Международной конференции по математике и ИИ, организованной ISSAI в Назарбаев Университете. Сборник тезисов, ISBN 978-601-08-6470-2, с. 43–44.",
       pub2:"Статья о сложности пространства состояний тогызкумалака — <strong>на рецензии в журнале <em>ICGA Journal</em></strong> (второй раунд).",
       sk1t:"Обучение и дообучение",
-      sk1d:"Continued pretraining и supervised fine-tuning с LoRA на одной машине. Оценка построена так, чтобы цифры выдержали проверку: контроль утечек, отложенные выборки, метрики, сравнимые между токенизаторами.",
+      sk1d:"Continued pretraining и supervised fine-tuning с LoRA на одной машине. Контроль утечек и отложенные выборки: число, которое я не могу защитить, ничего не стоит.",
       sk2t:"Ускорение",
-      sk2d:"Ядра квантованного инференса на C++ с матричными инструкциями ARM и SIMD. Профилирование, бенчмарки и честные цифры «до/после».",
+      sk2d:"Ядра квантованного инференса на C++ с матричными инструкциями ARM. «До/после» измеряется на незагруженной машине, публикуются и выигрыши, и проигрыши.",
       sk3t:"Данные в масштабе",
       sk3d:"Пайплайны по датасетам в 10<sup>11</sup> строк, блочное сжатие, проектирование индексов и отдача записей по HTTP без сервера.",
       sk4t:"Довести до продакшена",
-      sk4d:"CI, тесты, веб-демо на WebAssembly и Gradio, публичные релизы моделей и датасетов.",
+      sk4d:"CI, тесты, демо в браузере, публичные релизы моделей и датасетов.",
       p1t:"Ускоренный тернарный инференс LLM для llama.cpp",
       p1d:"Ядро блочного умножения матриц 8×8 для тернарного формата <code>TQ2_0</code> вместо скалярного пути. Открытый pull request в проект с 90k+ звёзд.",
       p1m1:"скорость обработки промпта на M2 Pro", p1m2:"токенов/с, измерено, а не оценено",
-      p2t:"База на 126 миллиардов записей с доступом за O(1)",
-      p2d:"Посчитал точную базу из 125 698 242 527 записей, сжал её и отдал так, что одну запись можно прочитать HTTP range-запросом — без скачивания и без бэкенда. 16 байт на запись за счёт комбинаторной индексации.",
-      p2m1:"на 126 миллиардов записей", p2m2:"доступ, прямо из статического хранилища",
+      p2t:"Первое в мире полное решение бестемше",
+      p2d:"Казахская манкала с пятью лунками решена точно для всех 125 698 242 527 позиций: выигрывает второй игрок. До этого её не решал никто. Для масштаба: полное решение авари (2002) заняло 778 ГиБ на кластере из 72 узлов; здесь — 8,96 ГБ, и ответ на любую позицию отдаётся одним HTTP range-запросом, без бэкенда.",
+      p2m1:"позиций решено точно", p2m2:"доступ за O(1), статическое хранилище",
       p3t:"LLM для языка с малыми ресурсами, обученная на ноутбуке",
-      p3d:"Собрал корпус ногайского языка на 2,35 млн слов воспроизводимым пайплайном и адаптировал Qwen2.5-1.5B на Apple Silicon — без кластера. Нашёл утечку между обучением и валидацией в собственных данных, пересобрал разбиения и отозвал статью из журнала, вместо того чтобы публиковать цифры, которые не могу защитить.",
+      p3d:"Ногайский язык — 86 000 носителей, его нет ни в одной крупной модели. Собрал корпус на 2,35 млн слов воспроизводимым пайплайном и адаптировал Qwen2.5-1.5B на Apple Silicon. Без кластера. Нашёл утечку между обучением и валидацией в собственных данных, пересобрал разбиения и отозвал статью из журнала, вместо того чтобы публиковать цифры, которые не могу защитить.",
       p3m1:"перплексия на отложенной выборке", p3m2:"бит на байт",
       p4t:"Поисковый движок на C++ со сборкой в WebAssembly",
-      p4d:"Поиск с таблицами транспозиций на 2,42 млн узлов/с в браузере, полноценный CI и развёрнутое демо. Сопутствующий анализ сложности на рецензии в <em>ICGA Journal</em>.",
+      p4d:"Поиск с таблицами транспозиций на 2,42 млн узлов/с в браузере, полноценный CI, развёрнутое демо. Рецензент нашёл реальную ошибку в моей таблице транспозиций; я измерил её эффект, исправил и добавил регрессионный тест, который падает на старом поведении.",
       p5t:"Копроцессор Apple AMX из Python",
       p5d:"<code>amxpy</code> открывает недокументированный матричный копроцессор Apple для Python; измерен на разных формах и опубликован вместе со случаями, где он проигрывает (0,70×), а не только выигрывает (2,91×).",
       edu:"<strong>Бакалавр компьютерных наук, Назарбаев Университет</strong> — 3 курс, выпуск в июне 2028.<br>GPA 3,87 / 4,00, <strong>1 место из 221</strong> на потоке. Полный государственный грант. Бывший научный ассистент.<br><strong>Первый выпускник Tomorrow School (alem.ai)</strong>.",
-      foot:"Если у вас есть модель, которая слишком медленная или слишком большая — это ровно та задача, которую я люблю."
+      foot:"Слишком медленная или слишком большая модель — ровно та задача, которую я люблю."
     }
   };
 
