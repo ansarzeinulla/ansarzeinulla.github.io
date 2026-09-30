@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ansar Zeinulla — AI/ML Engineer</title>
+<meta name="description" content="AI/ML engineer. Model training and fine-tuning, inference optimisation, large-scale data pipelines. Astana, Kazakhstan.">
+<style>
+  :root { --bg:#fbfaf8; --fg:#17171a; --dim:#6a6a72; --rule:#e2e0da; --link:#14508c; --chip:#efece6; --accent:#0f7b4f; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#121216; --fg:#eceaf0; --dim:#9a98a2; --rule:#2c2c33; --link:#8ab4e8; --chip:#1e1e25; --accent:#5fd39b; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);padding:0 16px;
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  main{max-width:44rem;margin:0 auto;padding:2.6rem 0 4rem}
+  h1{font-size:2rem;margin:0 0 .2rem;letter-spacing:-.015em}
+  .role{font-size:1.1rem;color:var(--accent);font-weight:600;margin:0 0 .5rem}
+  .sub{color:var(--dim);margin:0}
+  .hire{background:var(--chip);border-left:3px solid var(--accent);padding:.85rem 1rem;margin:1.5rem 0 0;border-radius:0 6px 6px 0}
+  .hire strong{display:block;margin-bottom:.2rem}
+  h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);
+    margin:2.3rem 0 .9rem;padding-bottom:.35rem;border-bottom:1px solid var(--rule)}
+  .skills{display:grid;grid-template-columns:8.5rem 1fr;gap:.5rem 1rem;font-size:.95rem}
+  .skills dt{color:var(--dim)}
+  .skills dd{margin:0}
+  .item{margin-bottom:1.55rem}
+  .item h3{font-size:1rem;margin:0 0 .25rem}
+  .item p{margin:0 0 .3rem}
+  .what{color:var(--dim);font-size:.9rem}
+  ul{margin:.3rem 0 0;padding-left:1.1rem}
+  li{margin-bottom:.2rem}
+  a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+  a:hover{border-bottom-color:var(--link)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+  .contact{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+  .contact a{background:var(--chip);border:0;border-radius:6px;padding:.4rem .7rem;font-size:.92rem}
+  footer{margin-top:2.6rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--dim);font-size:.88rem}
+  @media (max-width:520px){ .skills{grid-template-columns:1fr;gap:.15rem} .skills dt{margin-top:.5rem} }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ansar Zeinulla</h1>
+  <p class="role">AI / ML Engineer</p>
+  <p class="sub">Astana, Kazakhstan · Kazakh, Russian, English</p>
+
+  <div class="hire">
+    <strong>Open to work: ML engineering, inference optimisation, data infrastructure.</strong>
+    Internship, part-time or contract now; full-time from June 2028. On site in Astana or remote.
+    <a href="mailto:ansar.zeinulla@nu.edu.kz">ansar.zeinulla@nu.edu.kz</a>
+  </div>
+
+  <div class="contact">
+    <a href="https://github.com/ansarzeinulla">GitHub</a>
+    <a href="https://huggingface.co/ansarzeinulla">Hugging Face</a>
+    <a href="https://www.linkedin.com/in/ansar-zeinulla/">LinkedIn</a>
+    <a href="mailto:ansar.zeinulla@nu.edu.kz">Email</a>
+  </div>
+
+  <h2>What I do</h2>
+  <p>I make models smaller and faster, and I build the data infrastructure they run on. I write the
+  low-level code most ML teams would rather not touch — quantised inference kernels, compressed data
+  stores, training pipelines that fit on the hardware you actually have — and I measure the result
+  instead of estimating it.</p>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>C++17, Python, Go, JavaScript, SQL</dd>
+    <dt>ML</dt><dd>PyTorch, MLX (Apple Silicon), Hugging Face Transformers, PEFT/LoRA, fine-tuning and continued pretraining, quantisation, evaluation design</dd>
+    <dt>Inference / perf</dt><dd>llama.cpp, GGUF, ARM NEON &amp; i8mm intrinsics, Apple AMX, SIMD, multithreading, profiling and benchmarking</dd>
+    <dt>Data</dt><dd>pipelines over 10<sup>11</sup>-row datasets, ZSTD block compression, bitset indexing, HTTP range-request serving, deduplication and leakage checks</dd>
+    <dt>Deployment</dt><dd>Hugging Face Spaces, Gradio, WebAssembly, Vercel, GitHub Actions CI, CMake, pytest</dd>
+  </dl>
+
+  <h2>Things I built and shipped</h2>
+
+  <div class="item">
+    <h3>Faster ternary inference for llama.cpp <span class="what">— C++, ARM i8mm</span></h3>
+    <p>Wrote an 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format using ARM
+    matrix instructions, replacing the scalar path.</p>
+    <ul>
+      <li><strong>+79% prompt-processing throughput</strong> on an Apple M2 Pro (73 → 131 tokens/s).</li>
+      <li>Found and reported a 13% regression against Accelerate BLAS in my own patch rather than hiding it.</li>
+    </ul>
+    <p class="what"><a href="https://github.com/ggml-org/llama.cpp/pull/27589">Open pull request to llama.cpp</a>, a project with 90k+ stars.</p>
+  </div>
+
+  <div class="item">
+    <h3>126-billion-row data store with constant-time lookup <span class="what">— C++, Python, ZSTD</span></h3>
+    <p>Computed and published an exact 125,698,242,527-position database, compressed to <strong>8.96 GB</strong>
+    and served so any single record can be read over an HTTP range request — no download, no server.</p>
+    <ul>
+      <li>Combinatorial indexing instead of a database: 16 bytes per entry, O(1) lookup.</li>
+      <li>Public dataset with 88 downloads and a live browser demo.</li>
+    </ul>
+    <p class="what"><a href="https://github.com/ansarzeinulla/Bestemshe">Code</a> ·
+      <a href="https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase">Dataset</a> ·
+      <a href="https://huggingface.co/spaces/ansarzeinulla/Bestemshe-God-Algorithm">Demo</a></p>
+  </div>
+
+  <div class="item">
+    <h3>Training and evaluating a model for a low-resource language <span class="what">— MLX, LoRA, on a laptop</span></h3>
+    <p>Built a 2.35M-word corpus for Nogai with a reproducible pipeline, then adapted Qwen2.5-1.5B to it
+    with LoRA on Apple Silicon — no cluster.</p>
+    <ul>
+      <li>Held-out <strong>bits per byte 2.04 → 1.09</strong>, perplexity 130 → 13.4.</li>
+      <li>Caught train/validation leakage in my own dataset, rebuilt the splits, and withdrew a journal
+        submission rather than publish results I could not defend.</li>
+    </ul>
+    <p class="what"><a href="https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon">Code and evaluation harness</a></p>
+  </div>
+
+  <div class="item">
+    <h3>Game engine in C++ with a WebAssembly build <span class="what">— C++, WASM, CI</span></h3>
+    <p>Search engine with transposition tables at 2.42M nodes/s in the browser, full CI, and a deployed
+    web demo. Paper on its state-space complexity under review at the <em>ICGA Journal</em>.</p>
+    <p class="what"><a href="https://github.com/ansarzeinulla/9Q">Code</a> ·
+      <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
+  </div>
+
+  <div class="item">
+    <h3>Apple AMX from Python <span class="what">— C, Python</span></h3>
+    <p><code>amxpy</code>: a Python interface to Apple's undocumented AMX coprocessor, benchmarked across
+    shapes and published with the cases where it loses as well as where it wins (0.70×–2.91× vs Accelerate).</p>
+    <p class="what"><a href="https://github.com/ansarzeinulla/amxpy">amxpy</a> ·
+      <a href="https://github.com/ansarzeinulla/tensor-train-amx">tensor-train-amx</a></p>
+  </div>
+
+  <h2>Education</h2>
+  <p><strong>BSc Computer Science, Nazarbayev University</strong> — 3rd year, graduating June 2028.<br>
+  GPA 3.87/4.00, <strong>ranked 1 of 221</strong>. Full state scholarship. Former research assistant.</p>
+
+  <footer>
+    If you need someone who can take a model that is too slow or too big and make it fit —
+    <a href="mailto:ansar.zeinulla@nu.edu.kz">write to me</a>.
+  </footer>
+</main>
+</body>
+</html>
