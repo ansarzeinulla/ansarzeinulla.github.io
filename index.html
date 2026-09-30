@@ -4,137 +4,299 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ansar Zeinulla — AI/ML Engineer</title>
-<meta name="description" content="AI/ML engineer. Model training and fine-tuning, inference optimisation, large-scale data pipelines. Astana, Kazakhstan.">
+<meta name="description" content="AI/ML engineer. Model training and fine-tuning, inference optimisation, large-scale data infrastructure. Astana, Kazakhstan.">
+<meta property="og:title" content="Ansar Zeinulla — AI/ML Engineer">
+<meta property="og:description" content="I make models smaller and faster, and build the data infrastructure they run on.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⚡</text></svg>">
 <style>
-  :root { --bg:#fbfaf8; --fg:#17171a; --dim:#6a6a72; --rule:#e2e0da; --link:#14508c; --chip:#efece6; --accent:#0f7b4f; }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg:#121216; --fg:#eceaf0; --dim:#9a98a2; --rule:#2c2c33; --link:#8ab4e8; --chip:#1e1e25; --accent:#5fd39b; }
+  :root{
+    --bg:#fbfaf8; --card:#ffffff; --fg:#16161a; --dim:#65656e; --rule:#e5e3dc;
+    --link:#14508c; --chip:#f0ede6; --accent:#0d7a4d; --accent-soft:#e6f4ec;
+    --shadow:0 1px 2px rgba(20,20,26,.05), 0 8px 24px -12px rgba(20,20,26,.18);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1014; --card:#16181e; --fg:#ecebf0; --dim:#9694a0; --rule:#272932;
+      --link:#8ab4e8; --chip:#1d2027; --accent:#4ed69b; --accent-soft:#122a20;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.8);
+    }
   }
   *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--fg);padding:0 16px;
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  main{max-width:44rem;margin:0 auto;padding:2.6rem 0 4rem}
-  h1{font-size:2rem;margin:0 0 .2rem;letter-spacing:-.015em}
-  .role{font-size:1.1rem;color:var(--accent);font-weight:600;margin:0 0 .5rem}
-  .sub{color:var(--dim);margin:0}
-  .hire{background:var(--chip);border-left:3px solid var(--accent);padding:.85rem 1rem;margin:1.5rem 0 0;border-radius:0 6px 6px 0}
-  .hire strong{display:block;margin-bottom:.2rem}
-  h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);
-    margin:2.3rem 0 .9rem;padding-bottom:.35rem;border-bottom:1px solid var(--rule)}
-  .skills{display:grid;grid-template-columns:8.5rem 1fr;gap:.5rem 1rem;font-size:.95rem}
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-rendering:optimizeLegibility}
+  main{max-width:46rem;margin:0 auto;padding:1.2rem 0 3.5rem}
+
+  /* language switch */
+  .langbar{display:flex;gap:.35rem;justify-content:flex-end;padding:.6rem 0 1.2rem}
+  .langbar button{
+    font:600 .8rem/1 inherit;letter-spacing:.04em;color:var(--dim);background:transparent;
+    border:1px solid var(--rule);border-radius:999px;padding:.45rem .7rem;cursor:pointer}
+  .langbar button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .langbar button[aria-pressed="true"]{color:#0f1014}}
+
+  /* hero */
+  .hero{padding:.4rem 0 .2rem}
+  h1{font-size:clamp(2rem,7vw,2.6rem);margin:0 0 .35rem;letter-spacing:-.02em;line-height:1.1}
+  .role{display:inline-block;font-size:clamp(1rem,3.6vw,1.2rem);font-weight:700;color:var(--accent);
+    background:var(--accent-soft);padding:.25rem .6rem;border-radius:7px;margin:0 0 .6rem}
+  .sub{color:var(--dim);margin:0 0 1.1rem;font-size:.97rem}
+  .pitch{font-size:clamp(1.02rem,3.4vw,1.14rem);margin:0 0 1.4rem}
+
+  .open{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);
+    border-radius:10px;padding:1rem 1.1rem;box-shadow:var(--shadow);margin-bottom:1rem}
+  .open b{display:block;margin-bottom:.25rem;font-size:1.02rem}
+  .open span{color:var(--dim);font-size:.95rem}
+
+  .cta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}
+  .cta a{display:inline-block;border-radius:9px;padding:.65rem .95rem;font-size:.95rem;
+    font-weight:600;text-decoration:none;border:1px solid var(--rule);background:var(--card);color:var(--fg)}
+  .cta a.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cta a.primary{color:#0f1014}}
+  .cta a:hover{border-color:var(--accent)}
+
+  h2{font-size:.75rem;text-transform:uppercase;letter-spacing:.11em;color:var(--dim);
+    margin:2.4rem 0 .9rem}
+
+  .chips{display:flex;flex-wrap:wrap;gap:.35rem}
+  .chips span{background:var(--chip);border-radius:7px;padding:.32rem .6rem;font-size:.86rem;white-space:nowrap}
+
+  .skills{display:grid;grid-template-columns:9rem 1fr;gap:.55rem 1rem;font-size:.95rem}
   .skills dt{color:var(--dim)}
   .skills dd{margin:0}
-  .item{margin-bottom:1.55rem}
-  .item h3{font-size:1rem;margin:0 0 .25rem}
-  .item p{margin:0 0 .3rem}
-  .what{color:var(--dim);font-size:.9rem}
-  ul{margin:.3rem 0 0;padding-left:1.1rem}
-  li{margin-bottom:.2rem}
-  a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
-  a:hover{border-bottom-color:var(--link)}
-  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
-  .contact{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
-  .contact a{background:var(--chip);border:0;border-radius:6px;padding:.4rem .7rem;font-size:.92rem}
-  footer{margin-top:2.6rem;padding-top:1rem;border-top:1px solid var(--rule);color:var(--dim);font-size:.88rem}
-  @media (max-width:520px){ .skills{grid-template-columns:1fr;gap:.15rem} .skills dt{margin-top:.5rem} }
+  @media (max-width:560px){.skills{grid-template-columns:1fr;gap:.1rem}.skills dt{margin-top:.6rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}}
+
+  .proj{background:var(--card);border:1px solid var(--rule);border-radius:12px;
+    padding:1.05rem 1.15rem;margin-bottom:.85rem;box-shadow:var(--shadow)}
+  .proj h3{font-size:1.04rem;margin:0 0 .2rem;line-height:1.3}
+  .proj .stack{color:var(--dim);font-size:.85rem;margin:0 0 .6rem}
+  .proj p{margin:0 0 .6rem}
+  .metric{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0 .55rem}
+  .metric b{display:block;font-size:1.22rem;line-height:1.15;color:var(--accent)}
+  .metric div{background:var(--chip);border-radius:9px;padding:.5rem .7rem;font-size:.8rem;color:var(--dim);flex:1 1 8.5rem}
+  .proj .links{font-size:.9rem}
+  .proj .links a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .proj .links a:hover{border-bottom-color:var(--link)}
+
+  .edu{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1rem 1.15rem;box-shadow:var(--shadow)}
+  footer{margin-top:2.4rem;padding-top:1.1rem;border-top:1px solid var(--rule);color:var(--dim);font-size:.9rem}
+  footer a{color:var(--link)}
 </style>
 </head>
 <body>
 <main>
+
+<div class="langbar" role="group" aria-label="Language">
+  <button type="button" data-lang="en" aria-pressed="true">EN</button>
+  <button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button>
+  <button type="button" data-lang="ru" aria-pressed="false">РУС</button>
+</div>
+
+<section class="hero">
   <h1>Ansar Zeinulla</h1>
-  <p class="role">AI / ML Engineer</p>
-  <p class="sub">Astana, Kazakhstan · Kazakh, Russian, English</p>
+  <p class="role" data-i18n="role">AI / ML Engineer</p>
+  <p class="sub" data-i18n="loc">Astana, Kazakhstan · Kazakh, Russian, English</p>
+  <p class="pitch" data-i18n="pitch">I make models smaller and faster, and I build the data infrastructure they run on. I write the low-level code most teams would rather not touch — quantised inference kernels, compressed data stores, training pipelines that fit the hardware you already have — and I measure the result instead of estimating it.</p>
 
-  <div class="hire">
-    <strong>Open to work: ML engineering, inference optimisation, data infrastructure.</strong>
-    Internship, part-time or contract now; full-time from June 2028. On site in Astana or remote.
-    <a href="mailto:ansar.zeinulla@nu.edu.kz">ansar.zeinulla@nu.edu.kz</a>
+  <div class="open">
+    <b data-i18n="openTitle">Open to work — ML engineering, inference optimisation, data infrastructure</b>
+    <span data-i18n="openBody">Internship, part-time or contract now · full-time from June 2028 · Astana or remote</span>
   </div>
 
-  <div class="contact">
+  <div class="cta">
+    <a class="primary" href="mailto:ansar.zeinulla@nu.edu.kz" data-i18n="ctaMail">Email me</a>
+    <a href="ansar.vcf" data-i18n="ctaCard">Save contact</a>
     <a href="https://github.com/ansarzeinulla">GitHub</a>
-    <a href="https://huggingface.co/ansarzeinulla">Hugging Face</a>
     <a href="https://www.linkedin.com/in/ansar-zeinulla/">LinkedIn</a>
-    <a href="mailto:ansar.zeinulla@nu.edu.kz">Email</a>
+    <a href="https://huggingface.co/ansarzeinulla">Hugging Face</a>
   </div>
+</section>
 
-  <h2>What I do</h2>
-  <p>I make models smaller and faster, and I build the data infrastructure they run on. I write the
-  low-level code most ML teams would rather not touch — quantised inference kernels, compressed data
-  stores, training pipelines that fit on the hardware you actually have — and I measure the result
-  instead of estimating it.</p>
+<h2 data-i18n="hStack">Stack</h2>
+<div class="chips">
+  <span>C++17</span><span>Python</span><span>Go</span><span>PyTorch</span><span>MLX</span>
+  <span>Transformers</span><span>PEFT / LoRA</span><span>llama.cpp</span><span>GGUF</span>
+  <span>ARM NEON / i8mm</span><span>Apple AMX</span><span>SIMD</span><span>WebAssembly</span>
+  <span>CMake</span><span>pytest</span><span>GitHub Actions</span><span>Gradio</span><span>SQL</span>
+</div>
 
-  <h2>Skills</h2>
-  <dl class="skills">
-    <dt>Languages</dt><dd>C++17, Python, Go, JavaScript, SQL</dd>
-    <dt>ML</dt><dd>PyTorch, MLX (Apple Silicon), Hugging Face Transformers, PEFT/LoRA, fine-tuning and continued pretraining, quantisation, evaluation design</dd>
-    <dt>Inference / perf</dt><dd>llama.cpp, GGUF, ARM NEON &amp; i8mm intrinsics, Apple AMX, SIMD, multithreading, profiling and benchmarking</dd>
-    <dt>Data</dt><dd>pipelines over 10<sup>11</sup>-row datasets, ZSTD block compression, bitset indexing, HTTP range-request serving, deduplication and leakage checks</dd>
-    <dt>Deployment</dt><dd>Hugging Face Spaces, Gradio, WebAssembly, Vercel, GitHub Actions CI, CMake, pytest</dd>
-  </dl>
+<h2 data-i18n="hSkills">What I can do</h2>
+<dl class="skills">
+  <dt data-i18n="sk1t">Train &amp; fine-tune</dt>
+  <dd data-i18n="sk1d">Continued pretraining and supervised fine-tuning with LoRA, on a single machine. Evaluation designed so the numbers survive scrutiny: leakage checks, held-out splits, metrics that compare across tokenizers.</dd>
+  <dt data-i18n="sk2t">Make it fast</dt>
+  <dd data-i18n="sk2d">Quantised inference kernels in C++ with ARM matrix instructions and SIMD. Profiling, benchmarking, and honest before/after numbers.</dd>
+  <dt data-i18n="sk3t">Data at scale</dt>
+  <dd data-i18n="sk3d">Pipelines over 10<sup>11</sup>-row datasets, block compression, index design, and serving records over HTTP without a server.</dd>
+  <dt data-i18n="sk4t">Ship it</dt>
+  <dd data-i18n="sk4d">CI, tests, web demos in WebAssembly and Gradio, public model and dataset releases.</dd>
+</dl>
 
-  <h2>Things I built and shipped</h2>
+<h2 data-i18n="hProj">Built and shipped</h2>
 
-  <div class="item">
-    <h3>Faster ternary inference for llama.cpp <span class="what">— C++, ARM i8mm</span></h3>
-    <p>Wrote an 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format using ARM
-    matrix instructions, replacing the scalar path.</p>
-    <ul>
-      <li><strong>+79% prompt-processing throughput</strong> on an Apple M2 Pro (73 → 131 tokens/s).</li>
-      <li>Found and reported a 13% regression against Accelerate BLAS in my own patch rather than hiding it.</li>
-    </ul>
-    <p class="what"><a href="https://github.com/ggml-org/llama.cpp/pull/27589">Open pull request to llama.cpp</a>, a project with 90k+ stars.</p>
+<div class="proj">
+  <h3 data-i18n="p1t">Faster ternary LLM inference for llama.cpp</h3>
+  <p class="stack">C++ · ARM i8mm · SIMD</p>
+  <p data-i18n="p1d">An 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format, replacing the scalar path. Open pull request to a project with 90k+ stars.</p>
+  <div class="metric">
+    <div><b>+79%</b><span data-i18n="p1m1">prompt throughput on M2 Pro</span></div>
+    <div><b>73 → 131</b><span data-i18n="p1m2">tokens/s, measured not estimated</span></div>
   </div>
+  <p class="links"><a href="https://github.com/ggml-org/llama.cpp/pull/27589">llama.cpp #27589</a></p>
+</div>
 
-  <div class="item">
-    <h3>126-billion-row data store with constant-time lookup <span class="what">— C++, Python, ZSTD</span></h3>
-    <p>Computed and published an exact 125,698,242,527-position database, compressed to <strong>8.96 GB</strong>
-    and served so any single record can be read over an HTTP range request — no download, no server.</p>
-    <ul>
-      <li>Combinatorial indexing instead of a database: 16 bytes per entry, O(1) lookup.</li>
-      <li>Public dataset with 88 downloads and a live browser demo.</li>
-    </ul>
-    <p class="what"><a href="https://github.com/ansarzeinulla/Bestemshe">Code</a> ·
-      <a href="https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase">Dataset</a> ·
-      <a href="https://huggingface.co/spaces/ansarzeinulla/Bestemshe-God-Algorithm">Demo</a></p>
+<div class="proj">
+  <h3 data-i18n="p2t">126-billion-row dataset with O(1) lookup</h3>
+  <p class="stack">C++ · Python · ZSTD</p>
+  <p data-i18n="p2d">Computed an exact 125,698,242,527-record database, compressed it, and served it so a single record can be read over an HTTP range request — no download, no backend. 16 bytes per entry via combinatorial indexing.</p>
+  <div class="metric">
+    <div><b>8.96 GB</b><span data-i18n="p2m1">for 126 billion records</span></div>
+    <div><b>O(1)</b><span data-i18n="p2m2">lookup, straight from static storage</span></div>
   </div>
+  <p class="links"><a href="https://github.com/ansarzeinulla/Bestemshe">GitHub</a> · <a href="https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase">Dataset</a> · <a href="https://huggingface.co/spaces/ansarzeinulla/Bestemshe-God-Algorithm">Live demo</a></p>
+</div>
 
-  <div class="item">
-    <h3>Training and evaluating a model for a low-resource language <span class="what">— MLX, LoRA, on a laptop</span></h3>
-    <p>Built a 2.35M-word corpus for Nogai with a reproducible pipeline, then adapted Qwen2.5-1.5B to it
-    with LoRA on Apple Silicon — no cluster.</p>
-    <ul>
-      <li>Held-out <strong>bits per byte 2.04 → 1.09</strong>, perplexity 130 → 13.4.</li>
-      <li>Caught train/validation leakage in my own dataset, rebuilt the splits, and withdrew a journal
-        submission rather than publish results I could not defend.</li>
-    </ul>
-    <p class="what"><a href="https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon">Code and evaluation harness</a></p>
+<div class="proj">
+  <h3 data-i18n="p3t">LLM for a low-resource language, trained on a laptop</h3>
+  <p class="stack">MLX · LoRA · Hugging Face</p>
+  <p data-i18n="p3d">Built a 2.35M-word corpus for Nogai with a reproducible pipeline and adapted Qwen2.5-1.5B to it on Apple Silicon — no cluster. I found train/validation leakage in my own data, rebuilt the splits and withdrew a journal submission rather than publish numbers I could not defend.</p>
+  <div class="metric">
+    <div><b>130 → 13.4</b><span data-i18n="p3m1">held-out perplexity</span></div>
+    <div><b>2.04 → 1.09</b><span data-i18n="p3m2">bits per byte</span></div>
   </div>
+  <p class="links"><a href="https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon">GitHub</a></p>
+</div>
 
-  <div class="item">
-    <h3>Game engine in C++ with a WebAssembly build <span class="what">— C++, WASM, CI</span></h3>
-    <p>Search engine with transposition tables at 2.42M nodes/s in the browser, full CI, and a deployed
-    web demo. Paper on its state-space complexity under review at the <em>ICGA Journal</em>.</p>
-    <p class="what"><a href="https://github.com/ansarzeinulla/9Q">Code</a> ·
-      <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
-  </div>
+<div class="proj">
+  <h3 data-i18n="p4t">C++ search engine with a WebAssembly build</h3>
+  <p class="stack">C++ · WASM · CI</p>
+  <p data-i18n="p4d">Search with transposition tables running at 2.42M nodes/s in the browser, full CI and a deployed demo. The accompanying complexity analysis is under review at the <em>ICGA Journal</em>.</p>
+  <p class="links"><a href="https://github.com/ansarzeinulla/9Q">GitHub</a> · <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
+</div>
 
-  <div class="item">
-    <h3>Apple AMX from Python <span class="what">— C, Python</span></h3>
-    <p><code>amxpy</code>: a Python interface to Apple's undocumented AMX coprocessor, benchmarked across
-    shapes and published with the cases where it loses as well as where it wins (0.70×–2.91× vs Accelerate).</p>
-    <p class="what"><a href="https://github.com/ansarzeinulla/amxpy">amxpy</a> ·
-      <a href="https://github.com/ansarzeinulla/tensor-train-amx">tensor-train-amx</a></p>
-  </div>
+<div class="proj">
+  <h3 data-i18n="p5t">Apple's AMX coprocessor, from Python</h3>
+  <p class="stack">C · Python</p>
+  <p data-i18n="p5d"><code>amxpy</code> exposes Apple's undocumented matrix coprocessor to Python, benchmarked across shapes and published with the cases where it loses (0.70×) as well as where it wins (2.91×).</p>
+  <p class="links"><a href="https://github.com/ansarzeinulla/amxpy">amxpy</a> · <a href="https://github.com/ansarzeinulla/tensor-train-amx">tensor-train-amx</a></p>
+</div>
 
-  <h2>Education</h2>
-  <p><strong>BSc Computer Science, Nazarbayev University</strong> — 3rd year, graduating June 2028.<br>
-  GPA 3.87/4.00, <strong>ranked 1 of 221</strong>. Full state scholarship. Former research assistant.</p>
+<h2 data-i18n="hEdu">Education</h2>
+<div class="edu">
+  <p style="margin:0" data-i18n="edu">
+    <strong>BSc Computer Science, Nazarbayev University</strong> — 3rd year, graduating June 2028.<br>
+    GPA 3.87 / 4.00, <strong>ranked 1 of 221</strong>. Full state scholarship. Former research assistant.
+  </p>
+</div>
 
-  <footer>
-    If you need someone who can take a model that is too slow or too big and make it fit —
-    <a href="mailto:ansar.zeinulla@nu.edu.kz">write to me</a>.
-  </footer>
+<footer>
+  <span data-i18n="foot">If you have a model that is too slow or too big to fit — that is the problem I like.</span>
+  <a href="mailto:ansar.zeinulla@nu.edu.kz">ansar.zeinulla@nu.edu.kz</a>
+</footer>
+
 </main>
+
+<script>
+(function(){
+  var T = {
+    kk:{
+      role:"AI / ML инженері",
+      loc:"Астана, Қазақстан · қазақша, орысша, ағылшынша",
+      pitch:"Мен модельдерді кішірейтіп, жылдамдатамын және олар жұмыс істейтін дерек инфрақұрылымын құрамын. Көп команда қолға алғысы келмейтін төменгі деңгейдегі кодты жазамын — кванттанған инференс ядролары, сығылған дерек қоймалары, бар жабдыққа сыятын оқыту құбырлары — және нәтижені болжамай, өлшеймін.",
+      openTitle:"Жұмысқа ашықпын — ML инженериясы, инференсті оңтайландыру, дерек инфрақұрылымы",
+      openBody:"Қазір тәжірибеден өту, жарты күн немесе келісімшарт · 2028 жылғы маусымнан толық күн · Астанада немесе қашықтан",
+      ctaMail:"Хат жазу", ctaCard:"Байланысты сақтау",
+      hStack:"Технологиялар", hSkills:"Не істей аламын", hProj:"Жасалған жұмыстар", hEdu:"Білімі",
+      sk1t:"Оқыту және баптау",
+      sk1d:"LoRA арқылы жалғасты алдын ала оқыту және бақыланатын баптау — бір машинада. Бағалау сынға төтеп беретіндей жасалады: дерек ағуын тексеру, бөлек сынақ жиыны, токенизаторлар арасында салыстыруға келетін метрикалар.",
+      sk2t:"Жылдамдату",
+      sk2d:"C++ тілінде ARM матрицалық нұсқаулары мен SIMD көмегімен кванттанған инференс ядролары. Профильдеу, бенчмарк және адал «бұрын/кейін» сандары.",
+      sk3t:"Үлкен деректер",
+      sk3d:"10<sup>11</sup> жазбалы жиындар бойынша құбырлар, блоктық сығу, индекс жобалау және серверсіз HTTP арқылы жазба беру.",
+      sk4t:"Өнімге шығару",
+      sk4d:"CI, тестілер, WebAssembly және Gradio демолары, ашық модель мен дерек жинақтарын жариялау.",
+      p1t:"llama.cpp үшін жылдамырақ тернарлы LLM инференсі",
+      p1d:"<code>TQ2_0</code> тернарлы форматы үшін 8×8 блоктық матрицалық көбейту ядросы, скаляр жолды алмастырады. 90 мыңнан астам жұлдызы бар жобаға ашық pull request.",
+      p1m1:"M2 Pro-да промпт өңдеу жылдамдығы", p1m2:"токен/с, болжам емес, өлшенген",
+      p2t:"126 миллиард жазбалы дерекқор, O(1) іздеумен",
+      p2d:"125 698 242 527 жазбадан тұратын дәл дерекқор есептелді, сығылды және жеке жазбаны HTTP range сұрауымен оқуға болатындай етіп берілді — жүктеп алусыз, бэкендсіз. Комбинаторлық индекс арқылы жазбасына 16 байт.",
+      p2m1:"126 миллиард жазба үшін", p2m2:"іздеу, статикалық қоймадан тікелей",
+      p3t:"Ресурсы аз тіл үшін LLM, ноутбукте оқытылған",
+      p3d:"Ноғай тілі үшін 2,35 млн сөзден тұратын корпус қайталанатын құбырмен жиналды және Qwen2.5-1.5B Apple Silicon-да бейімделді — кластерсіз. Өз деректерімнен оқыту мен тексеру жиындарының араласқанын тауып, бөлуді қайта жасадым және қорғай алмайтын сандарды жарияламай, журналдағы мақаланы кері қайтарып алдым.",
+      p3m1:"бөлек сынақтағы перплексия", p3m2:"байтқа шаққандағы бит",
+      p4t:"WebAssembly құрастырмасы бар C++ іздеу қозғалтқышы",
+      p4d:"Транспозиция кестелері бар іздеу браузерде 2,42 млн түйін/с жылдамдықпен жұмыс істейді, толық CI және жарияланған демо. Қатар жүрген күрделілік талдауы <em>ICGA Journal</em> журналында қаралуда.",
+      p5t:"Apple AMX копроцессоры — Python-нан",
+      p5d:"<code>amxpy</code> Apple-дің құжатталмаған матрицалық копроцессорын Python-ға ашады; әртүрлі өлшемдерде өлшеніп, ұтқан (2,91×) жағдайлары сияқты ұтылған (0,70×) жағдайлары да жарияланған.",
+      edu:"<strong>Компьютерлік ғылымдар бакалавры, Назарбаев Университеті</strong> — 3-курс, 2028 жылдың маусымында бітіреді.<br>GPA 3,87 / 4,00, <strong>курста 221 студенттің ішінде 1-орын</strong>. Толық мемлекеттік грант. Бұрынғы зерттеу ассистенті.",
+      foot:"Егер моделіңіз тым баяу немесе тым үлкен болса — маған ұнайтын мәселе дәл сол."
+    },
+    ru:{
+      role:"AI / ML инженер",
+      loc:"Астана, Казахстан · казахский, русский, английский",
+      pitch:"Я делаю модели меньше и быстрее и строю инфраструктуру данных, на которой они работают. Пишу низкоуровневый код, за который большинство команд браться не хочет — ядра квантованного инференса, сжатые хранилища, пайплайны обучения под то железо, которое уже есть, — и результат измеряю, а не оцениваю на глаз.",
+      openTitle:"Открыт к работе — ML-инженерия, оптимизация инференса, инфраструктура данных",
+      openBody:"Сейчас стажировка, частичная занятость или контракт · полная занятость с июня 2028 · Астана или удалённо",
+      ctaMail:"Написать", ctaCard:"Сохранить контакт",
+      hStack:"Стек", hSkills:"Что я умею", hProj:"Что сделал", hEdu:"Образование",
+      sk1t:"Обучение и дообучение",
+      sk1d:"Continued pretraining и supervised fine-tuning с LoRA на одной машине. Оценка построена так, чтобы цифры выдержали проверку: контроль утечек, отложенные выборки, метрики, сравнимые между токенизаторами.",
+      sk2t:"Ускорение",
+      sk2d:"Ядра квантованного инференса на C++ с матричными инструкциями ARM и SIMD. Профилирование, бенчмарки и честные цифры «до/после».",
+      sk3t:"Данные в масштабе",
+      sk3d:"Пайплайны по датасетам в 10<sup>11</sup> строк, блочное сжатие, проектирование индексов и отдача записей по HTTP без сервера.",
+      sk4t:"Довести до продакшена",
+      sk4d:"CI, тесты, веб-демо на WebAssembly и Gradio, публичные релизы моделей и датасетов.",
+      p1t:"Ускоренный тернарный инференс LLM для llama.cpp",
+      p1d:"Ядро блочного умножения матриц 8×8 для тернарного формата <code>TQ2_0</code> вместо скалярного пути. Открытый pull request в проект с 90k+ звёзд.",
+      p1m1:"скорость обработки промпта на M2 Pro", p1m2:"токенов/с, измерено, а не оценено",
+      p2t:"База на 126 миллиардов записей с доступом за O(1)",
+      p2d:"Посчитал точную базу из 125 698 242 527 записей, сжал её и отдал так, что одну запись можно прочитать HTTP range-запросом — без скачивания и без бэкенда. 16 байт на запись за счёт комбинаторной индексации.",
+      p2m1:"на 126 миллиардов записей", p2m2:"доступ, прямо из статического хранилища",
+      p3t:"LLM для языка с малыми ресурсами, обученная на ноутбуке",
+      p3d:"Собрал корпус ногайского языка на 2,35 млн слов воспроизводимым пайплайном и адаптировал Qwen2.5-1.5B на Apple Silicon — без кластера. Нашёл утечку между обучением и валидацией в собственных данных, пересобрал разбиения и отозвал статью из журнала, вместо того чтобы публиковать цифры, которые не могу защитить.",
+      p3m1:"перплексия на отложенной выборке", p3m2:"бит на байт",
+      p4t:"Поисковый движок на C++ со сборкой в WebAssembly",
+      p4d:"Поиск с таблицами транспозиций на 2,42 млн узлов/с в браузере, полноценный CI и развёрнутое демо. Сопутствующий анализ сложности на рецензии в <em>ICGA Journal</em>.",
+      p5t:"Копроцессор Apple AMX из Python",
+      p5d:"<code>amxpy</code> открывает недокументированный матричный копроцессор Apple для Python; измерен на разных формах и опубликован вместе со случаями, где он проигрывает (0,70×), а не только выигрывает (2,91×).",
+      edu:"<strong>Бакалавр компьютерных наук, Назарбаев Университет</strong> — 3 курс, выпуск в июне 2028.<br>GPA 3,87 / 4,00, <strong>1 место из 221</strong> на потоке. Полный государственный грант. Бывший научный ассистент.",
+      foot:"Если у вас есть модель, которая слишком медленная или слишком большая — это ровно та задача, которую я люблю."
+    }
+  };
+
+  var nodes = document.querySelectorAll('[data-i18n]');
+  var en = {};
+  nodes.forEach(function(n){ en[n.getAttribute('data-i18n')] = n.innerHTML; });
+
+  function apply(lang){
+    var dict = lang === 'en' ? en : T[lang];
+    if(!dict) return;
+    nodes.forEach(function(n){
+      var k = n.getAttribute('data-i18n');
+      var v = (lang === 'en') ? en[k] : (dict[k] !== undefined ? dict[k] : en[k]);
+      if(v !== undefined) n.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.langbar button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+
+  document.querySelectorAll('.langbar button').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+
+  var start = null;
+  try { start = localStorage.getItem('lang'); } catch(e){}
+  if(!start){
+    var nav = (navigator.language || 'en').slice(0,2).toLowerCase();
+    start = (nav === 'kk') ? 'kk' : (nav === 'ru' ? 'ru' : 'en');
+  }
+  if(start !== 'en') apply(start);
+})();
+</script>
 </body>
 </html>

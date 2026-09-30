@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Zeinulla;Ansar;;;
+FN:Ansar Zeinulla
+TITLE:AI / ML Engineer
+EMAIL;TYPE=INTERNET,PREF:ansar.zeinulla@nu.edu.kz
+URL:https://ansarzeinulla.github.io/
+URL:https://github.com/ansarzeinulla
+URL:https://www.linkedin.com/in/ansar-zeinulla/
+ADR;TYPE=WORK:;;;Astana;;;Kazakhstan
+NOTE:Model training and fine-tuning, inference optimisation, large-scale data infrastructure. C++, Python, PyTorch, MLX, LoRA, llama.cpp, ARM SIMD.
+END:VCARD
