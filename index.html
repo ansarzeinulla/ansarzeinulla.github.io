@@ -91,6 +91,7 @@
   <button type="button" data-lang="en" aria-pressed="true">EN</button>
   <button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button>
   <button type="button" data-lang="ru" aria-pressed="false">РУС</button>
+  <button type="button" data-lang="de" aria-pressed="false">DE</button>
 </div>
 
 <section class="hero">
@@ -138,7 +139,7 @@
 <div class="proj">
   <h3 data-i18n="p1t">Faster ternary LLM inference for llama.cpp</h3>
   <p class="stack">C++ · ARM i8mm · SIMD</p>
-  <p data-i18n="p1d">An 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format, replacing the scalar path. Open pull request to a project with 90k+ stars.</p>
+  <p data-i18n="p1d">An 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format, replacing the scalar path. Pull request to a project with 90k+ stars, <strong>approved by the Arm reviewer</strong> and awaiting merge. Along the way I found the 13% slowdown it caused when BLAS is present and fixed it in the model loader.</p>
   <div class="metric">
     <div><b>+79%</b><span data-i18n="p1m1">prompt throughput on M2 Pro</span></div>
     <div><b>73 → 131</b><span data-i18n="p1m2">tokens/s, measured not estimated</span></div>
@@ -226,7 +227,7 @@
       sk4t:"Өнімге шығару",
       sk4d:"CI, тестілер, браузердегі демо, ашық модель мен дерек жинақтары.",
       p1t:"llama.cpp үшін жылдамырақ тернарлы LLM инференсі",
-      p1d:"<code>TQ2_0</code> тернарлы форматы үшін 8×8 блоктық матрицалық көбейту ядросы, скаляр жолды алмастырады. 90 мыңнан астам жұлдызы бар жобаға ашық pull request.",
+      p1d:"<code>TQ2_0</code> тернарлы форматы үшін 8×8 блоктық матрицалық көбейту ядросы, скаляр жолды алмастырады. 90 мыңнан астам жұлдызы бар жобаға pull request: <strong>Arm рецензенті мақұлдады</strong>, біріктіруді күтуде. Жол бойы BLAS қосылғанда пайда болған 13% баяулауды тауып, модель жүктегішінде түзеттім.",
       p1m1:"M2 Pro-да промпт өңдеу жылдамдығы", p1m2:"токен/с, болжам емес, өлшенген",
       p2t:"Бестемшенің әлемдегі алғашқы толық шешімі",
       p2d:"Бес шұңқырлы қазақ манкаласы 125 698 242 527 позицияның бәрі үшін дәл шешілді: екінші ойыншы жеңеді. Бұған дейін оны ешкім шешпеген. Салыстыру үшін: Awari ойынының толық шешімі (2002) 72 түйінді кластерде 778 ГиБ орын алған; мұнда 8,96 ГБ және кез келген позицияға бір HTTP range сұрауымен жауап беріледі, бэкендсіз.",
@@ -260,7 +261,7 @@
       sk4t:"Довести до продакшена",
       sk4d:"CI, тесты, демо в браузере, публичные релизы моделей и датасетов.",
       p1t:"Ускоренный тернарный инференс LLM для llama.cpp",
-      p1d:"Ядро блочного умножения матриц 8×8 для тернарного формата <code>TQ2_0</code> вместо скалярного пути. Открытый pull request в проект с 90k+ звёзд.",
+      p1d:"Ядро блочного умножения матриц 8×8 для тернарного формата <code>TQ2_0</code> вместо скалярного пути. Pull request в проект с 90k+ звёзд, <strong>одобрен рецензентом из Arm</strong> и ждёт слияния. По ходу я нашёл вызванное им замедление на 13% при включённом BLAS и исправил его в загрузчике модели.",
       p1m1:"скорость обработки промпта на M2 Pro", p1m2:"токенов/с, измерено, а не оценено",
       p2t:"Первое в мире полное решение бестемше",
       p2d:"Казахская манкала с пятью лунками решена точно для всех 125 698 242 527 позиций: выигрывает второй игрок. До этого её не решал никто. Для масштаба: полное решение авари (2002) заняло 778 ГиБ на кластере из 72 узлов; здесь — 8,96 ГБ, и ответ на любую позицию отдаётся одним HTTP range-запросом, без бэкенда.",
@@ -274,6 +275,40 @@
       p5d:"<code>amxpy</code> открывает недокументированный матричный копроцессор Apple для Python; измерен на разных формах и опубликован вместе со случаями, где он проигрывает (0,70×), а не только выигрывает (2,91×).",
       edu:"<strong>Бакалавр компьютерных наук, Назарбаев Университет</strong> — 3 курс, выпуск в июне 2028.<br>GPA 3,87 / 4,00, <strong>1 место из 221</strong> на потоке. Полный государственный грант. Бывший научный ассистент.<br><strong>Первый выпускник Tomorrow School (alem.ai)</strong>.",
       foot:"Слишком медленная или слишком большая модель — ровно та задача, которую я люблю."
+    },
+    de:{
+      role:"KI-/ML-Ingenieur",
+      loc:"Astana, Kasachstan · Kasachisch, Russisch, Englisch · erster Absolvent der Tomorrow School (alem.ai)",
+      pitch:"Ich mache Modelle kleiner und schneller und baue die Dateninfrastruktur, auf der sie laufen. Hinter jeder Aussage unten stehen eine Zahl und ein öffentliches Repository, das man prüfen kann.",
+      openTitle:"Offen für Angebote — ML-Engineering, Inferenzoptimierung, Dateninfrastruktur",
+      openBody:"Jetzt Praktikum, Teilzeit oder Auftrag · Vollzeit ab Juni 2028 · Astana oder remote",
+      ctaMail:"E-Mail schreiben", ctaCard:"Kontakt speichern",
+      hStack:"Technologien", hSkills:"Was ich kann", hProj:"Gebaut und veröffentlicht", hEdu:"Ausbildung", hPub:"Forschung",
+      pub1:"<strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — Abstract im Book of Abstracts der CMAI 2026, der 1. Internationalen Konferenz und des Workshops für Mathematik und KI, ausgerichtet von ISSAI an der Nazarbayev University, S. 51–53, ISBN 978-601-08-6470-2 (<a href=\"https://issai.nu.edu.kz/wp-content/uploads/2026/09/CMAI_2026_Book_of_Abstracts_ISBN.pdf\">PDF</a>). Vorgetragen als <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>, 9. September 2026.",
+      pub2:"Zeitschriftenartikel zur Zustandsraumkomplexität von Togyzkumalak — <strong>im Review beim <em>ICGA Journal</em></strong> (zweite Runde).",
+      sk1t:"Trainieren und Feintunen",
+      sk1d:"Continued Pretraining und Supervised Fine-Tuning mit LoRA auf einem einzigen Rechner. Prüfung auf Datenlecks und zurückgehaltene Testdaten: Eine Zahl, die ich nicht verteidigen kann, ist nichts wert.",
+      sk2t:"Schneller machen",
+      sk2d:"Quantisierte Inferenz-Kernel in C++ mit ARM-Matrixinstruktionen. Vorher und nachher auf einer unbelasteten Maschine gemessen, Gewinne und Verluste werden beide veröffentlicht.",
+      sk3t:"Daten in großem Maßstab",
+      sk3d:"Pipelines über Datensätze mit 10<sup>11</sup> Zeilen, Blockkompression, Indexdesign, Einträge per HTTP ohne Backend ausgeliefert.",
+      sk4t:"Ausliefern",
+      sk4d:"CI, Tests, Browser-Demos, öffentliche Releases von Modellen und Datensätzen.",
+      p1t:"Schnellere ternäre LLM-Inferenz für llama.cpp",
+      p1d:"Ein blockweiser 8×8-Matrixmultiplikations-Kernel für das ternäre Format <code>TQ2_0</code>, der den skalaren Pfad ersetzt. Pull Request an ein Projekt mit über 90.000 Sternen, <strong>vom Arm-Reviewer freigegeben</strong>, Merge ausstehend. Dabei habe ich eine dadurch verursachte Verlangsamung um 13 % bei aktivem BLAS gefunden und im Model-Loader behoben.",
+      p1m1:"Prompt-Durchsatz auf dem M2 Pro", p1m2:"Tokens/s, gemessen statt geschätzt",
+      p2t:"Erste vollständige Lösung von Bestemshe",
+      p2d:"Ein kasachisches Mancala-Spiel mit fünf Mulden, exakt gelöst für alle 125.698.242.527 Stellungen: Der zweite Spieler gewinnt. Niemand hatte es zuvor gelöst. Zum Vergleich: Die vollständige Lösung von Awari (2002) brauchte 778 GiB auf einem Cluster mit 72 Knoten; diese hier umfasst 8,96 GB und beantwortet jede Stellung mit einer einzigen HTTP-Range-Anfrage, ganz ohne Backend.",
+      p2m1:"Stellungen exakt gelöst", p2m2:"O(1)-Abfrage, statischer Speicher",
+      p3t:"LLM für eine ressourcenarme Sprache, auf einem Laptop trainiert",
+      p3d:"Ein Korpus mit 2,35 Mio. Wörtern für Nogaisch (86.000 Sprecher, in keinem großen Modell enthalten), aufgebaut mit einer reproduzierbaren Pipeline; danach habe ich Qwen2.5-1.5B auf Apple Silicon daran angepasst. Ohne Cluster. Ich fand ein Leck zwischen Trainings- und Validierungsdaten in meinen eigenen Daten, baute die Aufteilung neu und zog eine Zeitschriftenarbeit zurück, statt Zahlen zu veröffentlichen, die ich nicht verteidigen kann.",
+      p3m1:"Perplexität auf zurückgehaltenen Daten", p3m2:"Bits pro Byte",
+      p4t:"C++-Suchengine mit WebAssembly-Build",
+      p4d:"Suche mit Transpositionstabellen bei 2,42 Mio. Knoten/s im Browser, vollständiges CI, veröffentlichte Demo. Ein Gutachter fand einen echten Fehler in meiner Transpositionstabelle; ich habe seine Auswirkung gemessen, ihn behoben und einen Regressionstest ergänzt, der am alten Verhalten scheitert.",
+      p5t:"Apples AMX-Koprozessor aus Python",
+      p5d:"<code>amxpy</code> macht Apples undokumentierten Matrix-Koprozessor aus Python nutzbar, über viele Matrixgrößen gemessen und mit den Fällen veröffentlicht, in denen er verliert (0,70×), ebenso wie mit denen, in denen er gewinnt (2,91×).",
+      edu:"<strong>BSc Informatik, Nazarbayev University</strong> — 3. Studienjahr, Abschluss im Juni 2028.<br>GPA 3,87 / 4,00, <strong>Platz 1 von 221</strong>. Volles staatliches Stipendium. Zuvor studentische Hilfskraft in der Forschung.<br><strong>Erster Absolvent der Tomorrow School (alem.ai)</strong>.",
+      foot:"Ein Modell, das zu langsam oder zu groß ist: genau das Problem, das ich mag."
     }
   };
 
@@ -303,8 +338,13 @@
   var start = null;
   try { start = localStorage.getItem('lang'); } catch(e){}
   if(!start){
-    var nav = (navigator.language || 'en').slice(0,2).toLowerCase();
-    start = (nav === 'kk') ? 'kk' : (nav === 'ru' ? 'ru' : 'en');
+    // first language in the browser's preference list that the site has; English otherwise
+    var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || 'en'];
+    start = 'en';
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).slice(0,2).toLowerCase();
+      if (code === 'en' || T[code]) { start = code; break; }
+    }
   }
   if(start !== 'en') apply(start);
 })();
