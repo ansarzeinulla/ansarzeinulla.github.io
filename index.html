@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ansar Zeinulla — AI/ML Engineer</title>
-<meta name="description" content="AI/ML engineer. Model training and fine-tuning, inference optimisation, large-scale data infrastructure. Astana, Kazakhstan.">
-<meta property="og:title" content="Ansar Zeinulla — AI/ML Engineer">
-<meta property="og:description" content="I make models smaller and faster, and build the data infrastructure they run on.">
+<title>Ansar Zeinulla — Research and engineering in efficient ML</title>
+<meta name="description" content="Computer Science student at Nazarbayev University (1st of 221). Research on exact game solving and on how neural networks fail against ground truth; engineering of low-precision inference kernels for llama.cpp.">
+<meta property="og:title" content="Ansar Zeinulla — Research and engineering in efficient ML">
+<meta property="og:description" content="Exact game solving, low-precision inference kernels, and the data infrastructure behind them.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>⚡</text></svg>">
 <style>
   :root{
@@ -31,7 +31,7 @@
   /* language switch */
   .langbar{display:flex;gap:.35rem;justify-content:flex-end;padding:.6rem 0 1.2rem}
   .langbar button{
-    font:600 .8rem/1 inherit;letter-spacing:.04em;color:var(--dim);background:transparent;
+    font:600 .8rem/1 inherit;letter-spacing:.01em;color:var(--dim);background:transparent;
     border:1px solid var(--rule);border-radius:999px;padding:.45rem .7rem;cursor:pointer}
   .langbar button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .langbar button[aria-pressed="true"]{color:#0f1014}}
@@ -79,6 +79,12 @@
   .proj .links a{color:var(--link);text-decoration:none;border-bottom:1px solid var(--rule)}
   .proj .links a:hover{border-bottom-color:var(--link)}
 
+  .news{list-style:none;margin:0;padding:0;font-size:.95rem}
+  .news li{display:grid;grid-template-columns:5.2rem 1fr;gap:.8rem;padding:.42rem 0;border-bottom:1px solid var(--rule)}
+  .news li:last-child{border-bottom:0}
+  .news time{color:var(--dim);font-variant-numeric:tabular-nums;font-size:.88rem;padding-top:.08rem}
+  .news a{color:var(--link)}
+  .subh{font-size:.95rem;margin:1.2rem 0 .6rem}
   .edu{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1rem 1.15rem;box-shadow:var(--shadow)}
   footer{margin-top:2.4rem;padding-top:1.1rem;border-top:1px solid var(--rule);color:var(--dim);font-size:.9rem}
   footer a{color:var(--link)}
@@ -88,31 +94,42 @@
 <main>
 
 <div class="langbar" role="group" aria-label="Language">
-  <button type="button" data-lang="en" aria-pressed="true">EN</button>
-  <button type="button" data-lang="kk" aria-pressed="false">ҚАЗ</button>
-  <button type="button" data-lang="ru" aria-pressed="false">РУС</button>
-  <button type="button" data-lang="de" aria-pressed="false">DE</button>
+  <button type="button" data-lang="en" lang="en" aria-pressed="true">English</button>
+  <button type="button" data-lang="kk" lang="kk" aria-pressed="false">Қазақша</button>
+  <button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button>
+  <button type="button" data-lang="de" lang="de" aria-pressed="false">Deutsch</button>
 </div>
 
 <section class="hero">
   <h1>Ansar Zeinulla</h1>
-  <p class="role" data-i18n="role">AI / ML Engineer</p>
-  <p class="sub" data-i18n="loc">Astana, Kazakhstan · Kazakh, Russian, English · First graduate of Tomorrow School (alem.ai)</p>
-  <p class="pitch" data-i18n="pitch">I make models smaller and faster, and build the data infrastructure they run on. Every claim below has a number behind it and a public repository you can check.</p>
+  <p class="role" data-i18n="role">Research &amp; engineering · efficient ML · exact game solving</p>
+  <p class="sub" data-i18n="loc">BSc Computer Science, Nazarbayev University (1st of 221) · Astana, Kazakhstan</p>
+  <p class="pitch" data-i18n="pitch">I work on both sides of machine learning. In research, I solve games exactly and use the exact answer to measure how neural networks fail. In engineering, I write low-precision inference kernels that go into open-source software used in production. Every claim below has a number behind it and a public repository you can check.</p>
 
   <div class="open">
-    <b data-i18n="openTitle">Open to work — ML engineering, inference optimisation, data infrastructure</b>
-    <span data-i18n="openBody">Internship, part-time or contract now · full-time from June 2028 · Astana or remote</span>
+    <b data-i18n="openTitle">Looking for a research internship in summer 2027</b>
+    <span data-i18n="openBody">Systems for ML, efficient inference, exact methods · open to part-time engineering work during the semester</span>
   </div>
 
   <div class="cta">
     <a class="primary" href="mailto:ansar.zeinulla@nu.edu.kz" data-i18n="ctaMail">Email me</a>
+    <a href="Ansar-Zeinulla-CV.pdf" data-i18n="ctaCv">CV (PDF)</a>
     <a href="ansar.vcf" data-i18n="ctaCard">Save contact</a>
     <a href="https://github.com/ansarzeinulla">GitHub</a>
     <a href="https://www.linkedin.com/in/ansar-zeinulla/">LinkedIn</a>
     <a href="https://huggingface.co/ansarzeinulla">Hugging Face</a>
+    <a href="https://orcid.org/0009-0000-7763-1546">ORCID</a>
   </div>
 </section>
+
+<h2 data-i18n="hNews">News</h2>
+<ul class="news">
+  <li><time>Oct 2026</time><span data-i18n="n1">My <a href="https://github.com/ggml-org/llama.cpp/pull/27589">llama.cpp pull request</a> was approved by the reviewer from Arm.</span></li>
+  <li><time>Oct 2026</time><span data-i18n="n2">Interviewed on <a href="https://www.youtube.com/watch?v=DyzIdo6yWI4&amp;t=460s">Astana TV</a>.</span></li>
+  <li><time>Sep 2026</time><span data-i18n="n3">Talk at CMAI 2026, Nazarbayev University: <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>.</span></li>
+  <li><time>Sep 2026</time><span data-i18n="n4">Revised Togyzkumalak paper submitted to the <em>ICGA Journal</em>, second round of review.</span></li>
+  <li><time>2026</time><span data-i18n="n5">The full solution of Bestemshe published: <a href="https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase">8.96 GB dataset</a>, any position one request away.</span></li>
+</ul>
 
 <h2 data-i18n="hStack">Stack</h2>
 <div class="chips">
@@ -134,18 +151,7 @@
   <dd data-i18n="sk4d">CI, tests, browser demos, public model and dataset releases.</dd>
 </dl>
 
-<h2 data-i18n="hProj">Built and shipped</h2>
-
-<div class="proj">
-  <h3 data-i18n="p1t">Faster ternary LLM inference for llama.cpp</h3>
-  <p class="stack">C++ · ARM i8mm · SIMD</p>
-  <p data-i18n="p1d">An 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format, replacing the scalar path. Pull request to a project with 90k+ stars, <strong>approved by the Arm reviewer</strong> and awaiting merge. Along the way I found the 13% slowdown it caused when BLAS is present and fixed it in the model loader.</p>
-  <div class="metric">
-    <div><b>+79%</b><span data-i18n="p1m1">prompt throughput on M2 Pro</span></div>
-    <div><b>73 → 131</b><span data-i18n="p1m2">tokens/s, measured not estimated</span></div>
-  </div>
-  <p class="links"><a href="https://github.com/ggml-org/llama.cpp/pull/27589">llama.cpp #27589</a></p>
-</div>
+<h2 data-i18n="hRes">Research</h2>
 
 <div class="proj">
   <h3 data-i18n="p2t">First strong solution of Bestemshe</h3>
@@ -169,11 +175,23 @@
   <p class="links"><a href="https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon">GitHub</a></p>
 </div>
 
+<h3 class="subh" data-i18n="hPub">Publications &amp; talks</h3>
+<div class="edu" style="margin-bottom:.85rem">
+  <p style="margin:0 0 .5rem" data-i18n="pub1"><strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — abstract in the Book of Abstracts of CMAI 2026, the 1st International Conference and Workshop on Mathematics and AI, hosted by ISSAI at Nazarbayev University, pp. 51–53, ISBN 978-601-08-6470-2 (<a href="https://issai.nu.edu.kz/wp-content/uploads/2026/09/CMAI_2026_Book_of_Abstracts_ISBN.pdf">PDF</a>). Presented as the talk <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>, 9 September 2026.</p>
+  <p style="margin:0" data-i18n="pub2">Journal article on the state-space complexity of Togyzkumalak — <strong>under review at the <em>ICGA Journal</em></strong> (second round).</p>
+</div>
+
+<h2 data-i18n="hProj">Engineering &amp; open source</h2>
+
 <div class="proj">
-  <h3 data-i18n="p4t">C++ search engine with a WebAssembly build</h3>
-  <p class="stack">C++ · WASM · CI</p>
-  <p data-i18n="p4d">Search with transposition tables at 2.42M nodes/s in the browser, full CI, deployed demo. A reviewer found a real bug in my transposition table; I measured its effect, fixed it, and added a regression test that fails against the old behaviour.</p>
-  <p class="links"><a href="https://github.com/ansarzeinulla/9Q">GitHub</a> · <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
+  <h3 data-i18n="p1t">Faster ternary LLM inference for llama.cpp</h3>
+  <p class="stack">C++ · ARM i8mm · SIMD</p>
+  <p data-i18n="p1d">An 8×8 blocked matrix-multiply kernel for the <code>TQ2_0</code> ternary format, replacing the scalar path. Pull request to a project with 90k+ stars, <strong>approved by the Arm reviewer</strong> and awaiting merge. Along the way I found the 13% slowdown it caused when BLAS is present and fixed it in the model loader.</p>
+  <div class="metric">
+    <div><b>+79%</b><span data-i18n="p1m1">prompt throughput on M2 Pro</span></div>
+    <div><b>73 → 131</b><span data-i18n="p1m2">tokens/s, measured not estimated</span></div>
+  </div>
+  <p class="links"><a href="https://github.com/ggml-org/llama.cpp/pull/27589">llama.cpp #27589</a></p>
 </div>
 
 <div class="proj">
@@ -183,11 +201,13 @@
   <p class="links"><a href="https://github.com/ansarzeinulla/amxpy">amxpy</a> · <a href="https://github.com/ansarzeinulla/tensor-train-amx">tensor-train-amx</a></p>
 </div>
 
-<h2 data-i18n="hPub">Research</h2>
-<div class="edu" style="margin-bottom:.85rem">
-  <p style="margin:0 0 .5rem" data-i18n="pub1"><strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — abstract in the Book of Abstracts of CMAI 2026, the 1st International Conference and Workshop on Mathematics and AI, hosted by ISSAI at Nazarbayev University, pp. 51–53, ISBN 978-601-08-6470-2 (<a href="https://issai.nu.edu.kz/wp-content/uploads/2026/09/CMAI_2026_Book_of_Abstracts_ISBN.pdf">PDF</a>). Presented as the talk <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>, 9 September 2026.</p>
-  <p style="margin:0" data-i18n="pub2">Journal article on the state-space complexity of Togyzkumalak — <strong>under review at the <em>ICGA Journal</em></strong> (second round).</p>
+<div class="proj">
+  <h3 data-i18n="p4t">C++ search engine with a WebAssembly build</h3>
+  <p class="stack">C++ · WASM · CI</p>
+  <p data-i18n="p4d">Search with transposition tables at 2.42M nodes/s in the browser, full CI, deployed demo. A reviewer found a real bug in my transposition table; I measured its effect, fixed it, and added a regression test that fails against the old behaviour.</p>
+  <p class="links"><a href="https://github.com/ansarzeinulla/9Q">GitHub</a> · <a href="https://9qumalaq.vercel.app/">Live demo</a></p>
 </div>
+
 
 <h2 data-i18n="hEdu">Education</h2>
 <div class="edu">
@@ -209,13 +229,13 @@
 (function(){
   var T = {
     kk:{
-      role:"AI / ML инженері",
-      loc:"Астана, Қазақстан · қазақша, орысша, ағылшынша · Tomorrow School (alem.ai) бірінші түлегі",
-      pitch:"Мен модельдерді кішірейтіп, жылдамдатамын және олар жұмыс істейтін дерек инфрақұрылымын құрамын. Төмендегі әрбір тұжырымның артында нақты сан және тексеруге ашық репозиторий бар.",
-      openTitle:"Жұмысқа ашықпын — ML инженериясы, инференсті оңтайландыру, дерек инфрақұрылымы",
-      openBody:"Қазір тәжірибеден өту, жарты күн немесе келісімшарт · 2028 жылғы маусымнан толық күн · Астанада немесе қашықтан",
+      role:"Зерттеу және инженерия · тиімді ML · ойындарды дәл шешу",
+      loc:"Компьютерлік ғылымдар бакалавры, Назарбаев Университеті (221 студенттің ішінде 1-орын) · Астана, Қазақстан",
+      pitch:"Мен машиналық оқытудың екі жағында да жұмыс істеймін. Зерттеуде ойындарды дәл шешемін және сол дәл жауап арқылы нейрондық желілердің қалай қателесетінін өлшеймін. Инженерияда өндірісте қолданылатын ашық бағдарламаларға кіретін төмен дәлдікті инференс ядроларын жазамын. Төмендегі әрбір тұжырымның артында нақты сан және тексеруге ашық репозиторий бар.",
+      openTitle:"2027 жылдың жазында ғылыми тағылымдама іздеймін",
+      openBody:"ML жүйелері, тиімді инференс, дәл әдістер · семестр кезінде жарты күндік инженерлік жұмысқа да ашықпын",
       ctaMail:"Хат жазу", ctaCard:"Байланысты сақтау",
-      hStack:"Технологиялар", hSkills:"Не істей аламын", hProj:"Жасалған жұмыстар", hEdu:"Білімі", hPub:"Ғылыми жұмыс",
+      hStack:"Технологиялар", hSkills:"Не істей аламын", hProj:"Инженерия және ашық код", hEdu:"Білімі", hPub:"Жарияланымдар мен баяндамалар",
       pub1:"<strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — CMAI 2026 тезистер жинағы (Назарбаев Университетіндегі ISSAI өткізген Математика және ЖИ бойынша 1-ші халықаралық конференция), 51–53 беттер, ISBN 978-601-08-6470-2. 2026 жылғы 9 қыркүйекте <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em> баяндамасы ретінде ұсынылды.",
       pub2:"Тоғызқұмалақтың күй кеңістігінің күрделілігі туралы мақала — <strong><em>ICGA Journal</em> журналында қаралуда</strong> (екінші раунд).",
       sk1t:"Оқыту және баптау",
@@ -240,16 +260,24 @@
       p5t:"Apple AMX копроцессоры — Python-нан",
       p5d:"<code>amxpy</code> Apple-дің құжатталмаған матрицалық копроцессорын Python-ға ашады; әртүрлі өлшемдерде өлшеніп, ұтқан (2,91×) жағдайлары сияқты ұтылған (0,70×) жағдайлары да жарияланған.",
       edu:"<strong>Компьютерлік ғылымдар бакалавры, Назарбаев Университеті</strong> — 3-курс, 2028 жылдың маусымында бітіреді.<br>GPA 3,87 / 4,00, <strong>курста 221 студенттің ішінде 1-орын</strong>. Толық мемлекеттік грант. Бұрынғы зерттеу ассистенті.<br><strong>Tomorrow School (alem.ai) бірінші түлегі</strong>.",
+      ctaCv:"Түйіндеме (PDF)",
+      hNews:"Жаңалықтар",
+      hRes:"Зерттеу",
+      n1:"Менің <a href=\"https://github.com/ggml-org/llama.cpp/pull/27589\">llama.cpp pull request</a>-ымды Arm компаниясының рецензенті мақұлдады.",
+      n2:"<a href=\"https://www.youtube.com/watch?v=DyzIdo6yWI4&amp;t=460s\">Astana TV</a> арнасына сұхбат бердім.",
+      n3:"CMAI 2026 конференциясындағы баяндама, Назарбаев Университеті: <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>.",
+      n4:"Тоғызқұмалақ туралы мақаланың түзетілген нұсқасы <em>ICGA Journal</em>-ға жіберілді, екінші рецензия раунды.",
+      n5:"Бестемшенің толық шешімі жарияланды: <a href=\"https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase\">8,96 ГБ дерек жинағы</a>, кез келген позиция бір сұрау қашықтығында.",
       foot:"Тым баяу немесе тым үлкен модель — маған ұнайтын мәселе дәл сол."
     },
     ru:{
-      role:"AI / ML инженер",
-      loc:"Астана, Казахстан · казахский, русский, английский · первый выпускник Tomorrow School (alem.ai)",
-      pitch:"Я делаю модели меньше и быстрее и строю инфраструктуру данных, на которой они работают. За каждым утверждением ниже стоит число и открытый репозиторий, который можно проверить.",
-      openTitle:"Открыт к работе — ML-инженерия, оптимизация инференса, инфраструктура данных",
-      openBody:"Сейчас стажировка, частичная занятость или контракт · полная занятость с июня 2028 · Астана или удалённо",
+      role:"Исследования и инженерия · эффективное ML · точное решение игр",
+      loc:"Бакалавриат Computer Science, Назарбаев Университет (1-й из 221) · Астана, Казахстан",
+      pitch:"Я работаю по обе стороны машинного обучения. В исследованиях я решаю игры точно и с помощью точного ответа измеряю, как ошибаются нейросети. В инженерии я пишу ядра инференса пониженной точности, которые входят в открытый софт, используемый в продакшене. За каждым утверждением ниже стоит число и открытый репозиторий, который можно проверить.",
+      openTitle:"Ищу исследовательскую стажировку на лето 2027",
+      openBody:"Системы для ML, эффективный инференс, точные методы · открыт к частичной инженерной занятости во время семестра",
       ctaMail:"Написать", ctaCard:"Сохранить контакт",
-      hStack:"Стек", hSkills:"Что я умею", hProj:"Что сделал", hEdu:"Образование", hPub:"Научная работа",
+      hStack:"Стек", hSkills:"Что я умею", hProj:"Инженерия и открытый код", hEdu:"Образование", hPub:"Публикации и доклады",
       pub1:"<strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — сборник тезисов CMAI 2026 (1-я Международная конференция по математике и ИИ, ISSAI, Назарбаев Университет), с. 51–53, ISBN 978-601-08-6470-2. Представлено докладом <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em> 9 сентября 2026.",
       pub2:"Статья о сложности пространства состояний тогызкумалака — <strong>на рецензии в журнале <em>ICGA Journal</em></strong> (второй раунд).",
       sk1t:"Обучение и дообучение",
@@ -274,16 +302,24 @@
       p5t:"Копроцессор Apple AMX из Python",
       p5d:"<code>amxpy</code> открывает недокументированный матричный копроцессор Apple для Python; измерен на разных формах и опубликован вместе со случаями, где он проигрывает (0,70×), а не только выигрывает (2,91×).",
       edu:"<strong>Бакалавр компьютерных наук, Назарбаев Университет</strong> — 3 курс, выпуск в июне 2028.<br>GPA 3,87 / 4,00, <strong>1 место из 221</strong> на потоке. Полный государственный грант. Бывший научный ассистент.<br><strong>Первый выпускник Tomorrow School (alem.ai)</strong>.",
+      ctaCv:"Резюме (PDF)",
+      hNews:"Новости",
+      hRes:"Исследования",
+      n1:"Мой <a href=\"https://github.com/ggml-org/llama.cpp/pull/27589\">pull request в llama.cpp</a> одобрил рецензент из Arm.",
+      n2:"Интервью на <a href=\"https://www.youtube.com/watch?v=DyzIdo6yWI4&amp;t=460s\">Astana TV</a>.",
+      n3:"Доклад на CMAI 2026, Назарбаев Университет: <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>.",
+      n4:"Исправленная статья о тогызкумалаке отправлена в <em>ICGA Journal</em>, второй раунд рецензирования.",
+      n5:"Опубликовано полное решение бестемше: <a href=\"https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase\">датасет 8,96 ГБ</a>, любая позиция на расстоянии одного запроса.",
       foot:"Слишком медленная или слишком большая модель — ровно та задача, которую я люблю."
     },
     de:{
-      role:"KI-/ML-Ingenieur",
-      loc:"Astana, Kasachstan · Kasachisch, Russisch, Englisch · erster Absolvent der Tomorrow School (alem.ai)",
-      pitch:"Ich mache Modelle kleiner und schneller und baue die Dateninfrastruktur, auf der sie laufen. Hinter jeder Aussage unten stehen eine Zahl und ein öffentliches Repository, das man prüfen kann.",
-      openTitle:"Offen für Angebote — ML-Engineering, Inferenzoptimierung, Dateninfrastruktur",
-      openBody:"Jetzt Praktikum, Teilzeit oder Auftrag · Vollzeit ab Juni 2028 · Astana oder remote",
+      role:"Forschung und Engineering · effizientes ML · exakte Lösung von Spielen",
+      loc:"BSc Informatik, Nazarbayev University (Platz 1 von 221) · Astana, Kasachstan",
+      pitch:"Ich arbeite auf beiden Seiten des maschinellen Lernens. In der Forschung löse ich Spiele exakt und messe mit der exakten Antwort, wie neuronale Netze scheitern. Im Engineering schreibe ich Inferenz-Kernel mit niedriger Präzision für Open-Source-Software, die in der Praxis eingesetzt wird. Hinter jeder Aussage unten stehen eine Zahl und ein öffentliches Repository, das man prüfen kann.",
+      openTitle:"Ich suche ein Forschungspraktikum für den Sommer 2027",
+      openBody:"Systeme für ML, effiziente Inferenz, exakte Methoden · während des Semesters offen für Teilzeit im Engineering",
       ctaMail:"E-Mail schreiben", ctaCard:"Kontakt speichern",
-      hStack:"Technologien", hSkills:"Was ich kann", hProj:"Gebaut und veröffentlicht", hEdu:"Ausbildung", hPub:"Forschung",
+      hStack:"Technologien", hSkills:"Was ich kann", hProj:"Engineering und Open Source", hEdu:"Ausbildung", hPub:"Publikationen und Vorträge",
       pub1:"<strong>Combinatorial State-Space and Empirical Game Tree Complexity of Togyzkumalak: A Billion-Game Analysis</strong> — Abstract im Book of Abstracts der CMAI 2026, der 1. Internationalen Konferenz und des Workshops für Mathematik und KI, ausgerichtet von ISSAI an der Nazarbayev University, S. 51–53, ISBN 978-601-08-6470-2 (<a href=\"https://issai.nu.edu.kz/wp-content/uploads/2026/09/CMAI_2026_Book_of_Abstracts_ISBN.pdf\">PDF</a>). Vorgetragen als <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>, 9. September 2026.",
       pub2:"Zeitschriftenartikel zur Zustandsraumkomplexität von Togyzkumalak — <strong>im Review beim <em>ICGA Journal</em></strong> (zweite Runde).",
       sk1t:"Trainieren und Feintunen",
@@ -308,6 +344,14 @@
       p5t:"Apples AMX-Koprozessor aus Python",
       p5d:"<code>amxpy</code> macht Apples undokumentierten Matrix-Koprozessor aus Python nutzbar, über viele Matrixgrößen gemessen und mit den Fällen veröffentlicht, in denen er verliert (0,70×), ebenso wie mit denen, in denen er gewinnt (2,91×).",
       edu:"<strong>BSc Informatik, Nazarbayev University</strong> — 3. Studienjahr, Abschluss im Juni 2028.<br>GPA 3,87 / 4,00, <strong>Platz 1 von 221</strong>. Volles staatliches Stipendium. Zuvor studentische Hilfskraft in der Forschung.<br><strong>Erster Absolvent der Tomorrow School (alem.ai)</strong>.",
+      ctaCv:"Lebenslauf (PDF)",
+      hNews:"Neuigkeiten",
+      hRes:"Forschung",
+      n1:"Mein <a href=\"https://github.com/ggml-org/llama.cpp/pull/27589\">Pull Request für llama.cpp</a> wurde vom Reviewer von Arm freigegeben.",
+      n2:"Interview bei <a href=\"https://www.youtube.com/watch?v=DyzIdo6yWI4&amp;t=460s\">Astana TV</a>.",
+      n3:"Vortrag auf der CMAI 2026, Nazarbayev University: <em>Solving Bestemshe and Mapping Togyzkumalak to Benchmark Neural Decay</em>.",
+      n4:"Überarbeiteter Artikel zu Togyzkumalak beim <em>ICGA Journal</em> eingereicht, zweite Begutachtungsrunde.",
+      n5:"Die vollständige Lösung von Bestemshe veröffentlicht: <a href=\"https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase\">Datensatz mit 8,96 GB</a>, jede Stellung nur eine Anfrage entfernt.",
       foot:"Ein Modell, das zu langsam oder zu groß ist: genau das Problem, das ich mag."
     }
   };
