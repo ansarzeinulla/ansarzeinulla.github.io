@@ -1,0 +1,24 @@
+# Ansar Zeinulla
+
+> Computer Science student at Nazarbayev University, Astana, Kazakhstan (3rd year, graduating June 2028; GPA 3.87/4.00, ranked 1st of 221). Works on efficient ML inference (quantized kernels for llama.cpp on ARM), exact game solving, and LLMs for low-resource languages. Looking for a research internship in summer 2027; open to part-time engineering work during the semester.
+
+Contact: ansar.zeinulla@nu.edu.kz · Website: https://ansarzeinulla.github.io/ · CV: https://ansarzeinulla.github.io/Ansar-Zeinulla-CV.pdf
+
+## Engineering
+- [llama.cpp pull request #27589](https://github.com/ggml-org/llama.cpp/pull/27589): 8×8 blocked matrix-multiply kernel (ARM i8mm) for the TQ2_0 ternary format. Approved by the Arm reviewer, awaiting merge. Also found and fixed a slowdown in the model loader when BLAS is present.
+- [amxpy](https://github.com/ansarzeinulla/amxpy): Python access to Apple's undocumented AMX matrix coprocessor, benchmarked, with losing cases (0.70×) reported next to winning ones (2.91×).
+- [9Q](https://github.com/ansarzeinulla/9Q): C++ game-search engine with a WebAssembly build and CI.
+
+## Research
+- [Bestemshe strong solution](https://github.com/ansarzeinulla/Bestemshe): a five-pit Kazakh mancala solved exactly for all 125,698,242,527 positions (second player wins). 8.96 GB; any position answered by one HTTP range request. [Dataset](https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase).
+- Togyzkumalak state-space complexity: abstract in the CMAI 2026 Book of Abstracts (ISSAI, Nazarbayev University), pp. 51–53; journal article under review at the ICGA Journal.
+- [NogaiLLM](https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon): 2.35M-word corpus for Nogai and Qwen2.5-1.5B adapted with LoRA on a laptop; held-out bits per byte 2.04 → 1.09. Manuscript in preparation.
+
+## Skills
+C++17, Python, Go, PyTorch, MLX, Transformers, PEFT/LoRA, llama.cpp/GGUF, ARM NEON/i8mm, Apple AMX, SIMD, WebAssembly, CMake, GitHub Actions.
+
+## Profiles
+- GitHub: https://github.com/ansarzeinulla
+- LinkedIn: https://www.linkedin.com/in/ansar-zeinulla/
+- Hugging Face: https://huggingface.co/ansarzeinulla
+- ORCID: https://orcid.org/0009-0000-7763-1546
