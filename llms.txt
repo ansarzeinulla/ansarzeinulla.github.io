@@ -11,7 +11,7 @@ Contact: ansar.zeinulla@nu.edu.kz · Website: https://ansarzeinulla.github.io/ �
 
 ## Research
 - [Bestemshe strong solution](https://github.com/ansarzeinulla/Bestemshe): a five-pit Kazakh mancala solved exactly for all 125,698,242,527 positions (second player wins). 8.96 GB; any position answered by one HTTP range request. [Dataset](https://huggingface.co/datasets/ansarzeinulla/bestemshe-tablebase).
-- Togyzkumalak state-space complexity: abstract in the CMAI 2026 Book of Abstracts (ISSAI, Nazarbayev University), pp. 51–53; journal article under review at the ICGA Journal.
+- Togyzkumalak state-space complexity: abstract in the CMAI 2026 Book of Abstracts (ISSAI, Nazarbayev University), pp. 51–53; full paper in preparation.
 - [NogaiLLM](https://github.com/ansarzeinulla/NogaiLLM-Apple-Silicon): 2.35M-word corpus for Nogai and Qwen2.5-1.5B adapted with LoRA on a laptop; held-out bits per byte 2.04 → 1.09. Manuscript in preparation.
 
 ## Skills
